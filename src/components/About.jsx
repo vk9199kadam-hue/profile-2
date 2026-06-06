@@ -1,5 +1,5 @@
 import React from 'react';
-import stackImage from '../assets/about/image.png';
+import stackImage from '../assets/about/image.jpg';
 import reactImage from '../assets/about/react.png';
 import nodeImage from '../assets/about/node.png';
 import mongoImage from '../assets/about/mongodb.png';
@@ -25,10 +25,17 @@ const About = () => {
                 <div className="w-8 h-2 bg-black/30 rounded-full shadow-inner"></div>
               </div>
               {/* Image Container */}
-              <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent flex flex-col items-center justify-center text-white p-6">
-                <span className="text-6xl mb-4">🧑‍🎓</span>
+              <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
+                <img 
+                  src={stackImage} 
+                  alt="Viraj Kadam" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Details Container */}
+              <div className="mt-4 mb-2 flex flex-col items-center justify-center text-white">
                 <span className="text-lg font-black tracking-tight text-center">Viraj Kadam</span>
-                <span className="text-xs text-white/60 font-mono mt-1">CSE — RIT College</span>
+                <span className="text-xs text-white/60 font-mono mt-1 text-center">CSE — RIT College</span>
               </div>
             </div>
           </div>
