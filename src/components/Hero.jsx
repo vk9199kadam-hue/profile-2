@@ -47,23 +47,23 @@ const Hero = () => {
       </video>
 
       {/* Content Container */}
-      <div className="absolute inset-0 z-20 px-6 pb-20 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-end md:justify-between items-start md:items-end text-left w-full">
+      <div className="absolute inset-0 z-20 px-6 pb-20 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-end md:justify-between items-center md:items-end text-center md:text-left w-full">
         
         {/* Left Side: Text and Buttons */}
-        <div className="flex flex-col items-start text-left max-w-2xl w-full">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-2xl w-full">
           {/* Main Heading */}
           <h1 
             data-aos="fade-up"
             className="text-white text-4xl md:text-6xl font-black mb-4 tracking-tight leading-none"
           >
-            Hi, I’m <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_white]">Viraj Kadam</span>
+            Hi, I’m <br className="hidden md:inline" /> <span className="text-transparent [-webkit-text-stroke:1.5px_white]">Viraj Kadam</span>
           </h1>
 
           {/* Subheading */}
           <p 
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-white/80 text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
+            className="text-white/80 text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md mx-auto md:mx-0"
           >
             Passionate Computer Science student at RIT College, building elegant digital experiences. I love turning complex problems into clean, efficient code.
           </p>
@@ -72,7 +72,7 @@ const Hero = () => {
           <div 
             data-aos="fade-up"
             data-aos-delay="400"
-            className="flex flex-row flex-wrap items-center gap-3 w-full"
+            className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-3 w-full"
           >
             {/* Primary Button */}
             <a href="#projects" className="px-6 py-2.5 text-xs md:text-sm rounded-full bg-white text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
@@ -89,7 +89,7 @@ const Hero = () => {
           <div 
             data-aos="fade-up"
             data-aos-delay="500"
-            className="flex gap-8 mt-10 text-white/90 border-t border-white/10 pt-6 w-full max-w-md"
+            className="flex justify-center md:justify-start gap-8 mt-10 text-white/90 border-t border-white/10 pt-6 w-full max-w-md mx-auto md:mx-0"
           >
             <div className="flex flex-col">
               <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">10+</span>
@@ -110,7 +110,7 @@ const Hero = () => {
         <div 
           data-aos="zoom-in"
           data-aos-delay="600"
-          className="mt-8 md:mt-0 flex flex-row md:flex-col items-center gap-2 md:gap-3 cursor-pointer group self-start md:self-auto"
+          className="mt-8 md:mt-0 flex flex-col items-center gap-2 md:gap-3 cursor-pointer group self-center md:self-auto"
           onClick={toggleVideo}
         >
           <div className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/20 backdrop-blur-md flex justify-center items-center group-hover:scale-110 group-hover:bg-[#ff2a2a] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_40px_rgba(255,42,42,0.6)]">

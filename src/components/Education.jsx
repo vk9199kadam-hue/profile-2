@@ -91,8 +91,8 @@ const Education = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="mb-16" data-aos="fade-up">
-          <span className="text-xs font-mono tracking-[0.2em] text-orange-500 uppercase font-black">
+        <div className="mb-16 text-center md:text-left" data-aos="fade-up">
+          <span className="text-xs font-mono tracking-[0.2em] text-orange-500 uppercase font-black block">
             My Journey
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-neutral-900 mt-3 tracking-tighter leading-none">
@@ -103,7 +103,7 @@ const Education = () => {
         {/* Timeline Items */}
         <div className="relative flex flex-col gap-10">
           {/* Vertical connecting line */}
-          <div className="absolute left-[24px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-orange-500 to-orange-100 hidden md:block"></div>
+          <div className="absolute left-[24px] top-6 bottom-6 w-[2px] bg-gradient-to-b from-orange-500 to-orange-100"></div>
 
           {educationData.map((edu, index) => (
             <EducationItem key={index} {...edu} index={index} />

@@ -43,10 +43,10 @@ const About = () => {
         </div>
 
         {/* Right Side: Info Content */}
-        <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
+        <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20 flex flex-col items-center md:items-start text-center md:text-left">
           
           <h2 className="text-4xl md:text-5xl font-black text-black mb-4">Hello!</h2>
-          <div className="text-base md:text-lg font-medium mb-8 leading-relaxed max-w-3xl text-red-50 flex flex-col gap-4">
+          <div className="text-base md:text-lg font-medium mb-8 leading-relaxed max-w-3xl text-red-50 flex flex-col gap-4 text-center md:text-left">
             <p>
               Hi, my name is <span className="text-black font-black">Viraj Kadam</span>, a passionate Computer Science & Engineering student at <strong className="text-black">RIT College</strong>, Maharashtra, IN. I thrive at the intersection of creativity and logic.
             </p>
@@ -56,9 +56,9 @@ const About = () => {
           </div>
 
           {/* Tech stack inline */}
-          <div className="mb-8">
+          <div className="mb-8 w-full flex flex-col items-center md:items-start">
             <p className="mb-3 font-mono text-xs text-black font-bold tracking-widest uppercase">Tech I Work With</p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
               {['Python', 'JavaScript', 'C++', 'Java', 'React', 'Node.js', 'Express', 'MongoDB', 'MySQL', 'Git & GitHub', 'Linux', 'DSA', 'Machine Learning'].map((tech) => (
                 <span key={tech} className="px-3 py-1 rounded-full text-xs font-semibold bg-black/10 border border-white/20 text-white hover:bg-black/30 transition-colors duration-300">
                   {tech}
@@ -68,7 +68,7 @@ const About = () => {
           </div>
 
           {/* Horizontal Skills Row (Transparent & Large Icons) */}
-          <div className="flex items-center gap-10 mt-8">
+          <div className="flex items-center justify-center md:justify-start gap-10 mt-8 w-full">
             <img 
               data-aos="zoom-in" data-aos-delay="300"
               src={reactImage} 

@@ -55,8 +55,8 @@ const Skills = () => {
     <section id="skills" className="bg-gradient-to-br from-white via-white to-orange-50/50 py-24 px-6 md:px-12 w-full min-h-screen">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-16" data-aos="fade-up">
-          <span className="text-xs font-mono tracking-[0.2em] text-orange-500 uppercase font-black">
+        <div className="mb-16 text-center md:text-left" data-aos="fade-up">
+          <span className="text-xs font-mono tracking-[0.2em] text-orange-500 uppercase font-black block">
             What I Know
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-neutral-900 mt-3 tracking-tighter leading-none">
@@ -65,13 +65,13 @@ const Skills = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           {skillCategories.map((category, idx) => (
             <div 
               key={category.title}
               data-aos="fade-up"
               data-aos-delay={idx * 150}
-              className="bg-white border border-neutral-100 p-8 rounded-[2rem] shadow-[0_15px_40px_rgba(249,115,22,0.06)] flex flex-col gap-6 hover:border-orange-500/20 transition-all duration-500 hover:-translate-y-1"
+              className="bg-white border border-neutral-100 p-8 rounded-[2rem] shadow-[0_15px_40px_rgba(249,115,22,0.06)] flex flex-col gap-6 hover:border-orange-500/20 transition-all duration-500 hover:-translate-y-1 max-w-md w-full"
             >
               <div className="flex items-center gap-3">
                 <span className="text-3xl">{category.icon}</span>

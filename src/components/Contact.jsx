@@ -30,7 +30,7 @@ const Contact = () => {
       <div className="relative z-10 w-full flex justify-end items-end">
         <div 
           data-aos="fade-up"
-          className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
+          className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between rounded-t-[2.5rem] md:rounded-t-none md:rounded-l-[3.5rem] shadow-[0_-20px_50px_rgba(255,42,42,0.15)] md:shadow-none"
         >
           <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">
             Reach Us

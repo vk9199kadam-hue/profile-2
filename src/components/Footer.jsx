@@ -12,14 +12,14 @@ const Footer = ({ onNavigate }) => {
     <footer className="bg-[#111111] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh]">
       
       {/* Top Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full font-medium">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full font-medium text-center md:text-left">
         <div className="flex flex-col gap-1">
           <p>Full-Stack Web Development</p>
           <p>React, Node.js, Express, MongoDB</p>
           <p>Python, ML & Algorithms</p>
         </div>
         
-        <div className="flex flex-col gap-1 md:items-center">
+        <div className="flex flex-col gap-1 items-center">
           <p>Computer Science Student</p>
           <a 
             href="#projects" 
@@ -30,7 +30,7 @@ const Footer = ({ onNavigate }) => {
           </a>
         </div>
         
-        <div className="flex flex-col gap-1 md:items-end">
+        <div className="flex flex-col gap-1 items-center md:items-end text-center md:text-right">
           <p>Available for Internships</p>
           <p>{new Date().getFullYear()}</p>
         </div>
@@ -44,8 +44,8 @@ const Footer = ({ onNavigate }) => {
       </div>
 
       {/* Bottom Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full items-end font-medium">
-        <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full items-center md:items-end font-medium text-center md:text-left">
+        <div className="flex flex-col gap-6 items-center md:items-start">
           <a 
             href="#contact" 
             onClick={(e) => handleNavigateClick(e, 'contact')}
@@ -58,11 +58,11 @@ const Footer = ({ onNavigate }) => {
           </p>
         </div>
         
-        <div className="flex flex-col gap-1 md:items-center">
+        <div className="flex flex-col gap-1 items-center">
           <a href="mailto:virajkadam@gmail.com" className="underline hover:text-white transition-colors underline-offset-4 decoration-1 lowercase">virajkadam@gmail.com</a>
         </div>
         
-        <div className="flex flex-col gap-1 md:items-end">
+        <div className="flex flex-col gap-1 items-center md:items-end text-center md:text-right">
           <a href="#" className="underline hover:text-white transition-colors underline-offset-4 decoration-1">Privacy Policy</a>
         </div>
       </div>

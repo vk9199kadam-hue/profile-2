@@ -5,7 +5,7 @@ const ProjectCard = ({ emoji, title, desc, tags, gitLink, liveLink, index }) => 
     <div 
       data-aos="fade-up"
       data-aos-delay={index * 100}
-      className="group bg-white border border-neutral-100 rounded-3xl overflow-hidden hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-between hover:-translate-y-2 shadow-[0_15px_40px_rgba(249,115,22,0.06)] relative"
+      className="group bg-white border border-neutral-100 rounded-3xl overflow-hidden hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-between hover:-translate-y-2 shadow-[0_15px_40px_rgba(249,115,22,0.06)] relative max-w-md w-full"
     >
       {/* Thumbnail Area */}
       <div className="h-44 bg-gradient-to-br from-orange-50 to-orange-100/50 flex items-center justify-center text-6xl relative select-none border-b border-neutral-100">
@@ -117,8 +117,8 @@ const Projects = () => {
     <section id="projects" className="bg-gradient-to-br from-white via-white to-orange-50/50 py-24 px-6 md:px-12 w-full min-h-screen">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-16" data-aos="fade-up">
-          <span className="text-xs font-mono tracking-[0.2em] text-orange-500 uppercase font-black">
+        <div className="mb-16 text-center md:text-left" data-aos="fade-up">
+          <span className="text-xs font-mono tracking-[0.2em] text-orange-500 uppercase font-black block">
             What I've Built
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-neutral-900 mt-3 tracking-tighter leading-none">
@@ -127,7 +127,7 @@ const Projects = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {projectsData.map((project, index) => (
             <ProjectCard key={project.title} {...project} index={index} />
           ))}
