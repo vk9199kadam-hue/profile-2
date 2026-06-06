@@ -2,7 +2,8 @@ import React, { useRef, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // Adjusted import path for the video
-import heroVideo from '../assets/hero video/Developer_introduces_self_and_sk…_202606051918.mp4';
+import heroVideo from '../assets/hero video/3e32c73d-4a68-4744-924c-504ebb16f2b8.mp4';
+
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -32,14 +33,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black">
+    <section id="home" className="relative w-full h-screen overflow-hidden bg-black">
       {/* Background Video */}
       <video
         ref={videoRef}
         loop
         muted={isMuted}
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0 scale-[1.25]"
       >
         <source src={heroVideo} type="video/mp4" />
         Your browser does not support the video tag.
@@ -53,18 +54,18 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 
             data-aos="fade-up"
-            className="text-white text-3xl md:text-5xl font-bold mb-4 tracking-tight"
+            className="text-white text-4xl md:text-6xl font-black mb-4 tracking-tight leading-none"
           >
-            Hi, I’m a <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_black]">Full Stack Developer</span>
+            Hi, I’m <br /> <span className="text-transparent [-webkit-text-stroke:1.5px_white]">Viraj Kadam</span>
           </h1>
 
           {/* Subheading */}
           <p 
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-white text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
+            className="text-white/80 text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md"
           >
-            I build fast, scalable and modern web applications using React, Node.js and Tailwind CSS.
+            Passionate Computer Science student at RIT College, building elegant digital experiences. I love turning complex problems into clean, efficient code.
           </p>
 
           {/* Buttons */}
@@ -74,14 +75,34 @@ const Hero = () => {
             className="flex flex-row flex-wrap items-center gap-3 w-full"
           >
             {/* Primary Button */}
-            <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
+            <a href="#projects" className="px-6 py-2.5 text-xs md:text-sm rounded-full bg-white text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
               View My Work
-            </button>
+            </a>
             
             {/* Secondary Button - Glassmorphism style */}
-            <button className="px-4 py-2 md:px-6 md:py-2 text-xs md:text-base rounded-full bg-black/40 border border-white text-white font-semibold hover:bg-black/60 transition-all duration-300 backdrop-blur-md">
+            <a href="#contact" className="px-6 py-2.5 text-xs md:text-sm rounded-full bg-black/40 border border-white/20 text-white font-bold hover:bg-black/60 transition-all duration-300 backdrop-blur-md">
               Contact Me
-            </button>
+            </a>
+          </div>
+
+          {/* Stats Grid */}
+          <div 
+            data-aos="fade-up"
+            data-aos-delay="500"
+            className="flex gap-8 mt-10 text-white/90 border-t border-white/10 pt-6 w-full max-w-md"
+          >
+            <div className="flex flex-col">
+              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">10+</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">Projects Done</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">5+</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">Technologies</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">3★</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">Coding Rating</span>
+            </div>
           </div>
         </div>
 

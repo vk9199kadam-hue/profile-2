@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ currentView, onNavigate }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -17,7 +17,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Education', 'Contact'];
 
   return (
     <nav 
@@ -25,7 +25,7 @@ const Navbar = () => {
         isOpen 
           ? 'bg-[#ff2a2a] py-4'
           : isScrolled 
-            ? 'bg-transparent py-4' 
+            ? 'bg-[#050505]/90 backdrop-blur-md py-4 border-b border-white/5' 
             : 'bg-transparent py-6'
       }`}
     >
@@ -33,30 +33,52 @@ const Navbar = () => {
         
         {/* Left Side: Logo/Name */}
         <div className="flex items-center">
-          <a href="#" className="text-white text-2xl font-black tracking-tight">
-            Leeshark<span className="text-red-500">.</span>
+          <a 
+            href="#" 
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigate) onNavigate('home');
+            }}
+            className="text-white text-2xl font-black tracking-tight"
+          >
+            VK Organization<span className="text-red-500">.</span>
           </a>
         </div>
 
         {/* Center: Desktop Menu Links */}
         <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <a 
-              key={link} 
-              href={`#${link.toLowerCase()}`}
-              className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
-            >
-              {link}
-              {/* Smooth hover underline */}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = currentView === link.toLowerCase();
+            return (
+              <a 
+                key={link} 
+                href={`#${link.toLowerCase()}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigate) onNavigate(link.toLowerCase());
+                }}
+                className={`font-medium relative group transition-colors duration-300 ${
+                  isActive ? 'text-[#ff2a2a]' : 'text-white/80 hover:text-white'
+                }`}
+              >
+                {link}
+                {/* Smooth hover underline */}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#ff2a2a] transition-all duration-300 ${
+                  isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
+              </a>
+            );
+          })}
         </div>
 
         {/* Right Side: CTA Button */}
         <div className="hidden md:block">
           <a 
             href="#contact" 
+            onClick={(e) => {
+              e.preventDefault();
+              if (onNavigate) onNavigate('contact');
+            }}
             className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
           >
             Hire Me
@@ -87,23 +109,36 @@ const Navbar = () => {
         }`}
       >
         <div className="flex flex-col px-6 space-y-4">
-          {navLinks.map((link) => (
-            <a 
-              key={link} 
-              href={`#${link.toLowerCase()}`}
-              onClick={() => setIsOpen(false)}
-              className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
-            >
-              {link}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = currentView === link.toLowerCase();
+            return (
+              <a 
+                key={link} 
+                href={`#${link.toLowerCase()}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(false);
+                  if (onNavigate) onNavigate(link.toLowerCase());
+                }}
+                className={`font-bold text-lg border-b border-white/20 pb-2 transition-colors ${
+                  isActive ? 'text-black font-black' : 'text-white hover:text-black'
+                }`}
+              >
+                {link}
+              </a>
+            );
+          })}
           <div className="pt-4 pb-2">
              <a 
-               href="#contact" 
-               onClick={() => setIsOpen(false)} 
-               className="inline-block px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
+                href="#contact" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsOpen(false);
+                  if (onNavigate) onNavigate('contact');
+                }} 
+                className="inline-block px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
              >
-               Hire Me
+                Hire Me
              </a>
           </div>
         </div>

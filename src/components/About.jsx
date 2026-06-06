@@ -6,7 +6,7 @@ import mongoImage from '../assets/about/mongodb.png';
 
 const About = () => {
   return (
-    <section className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans">
+    <section id="about" className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
         
         {/* Left Side: ID Badge and Skills */}
@@ -25,12 +25,10 @@ const About = () => {
                 <div className="w-8 h-2 bg-black/30 rounded-full shadow-inner"></div>
               </div>
               {/* Image Container */}
-              <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
-                <img 
-                  src={stackImage} 
-                  alt="Profile" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent flex flex-col items-center justify-center text-white p-6">
+                <span className="text-6xl mb-4">🧑‍🎓</span>
+                <span className="text-lg font-black tracking-tight text-center">Viraj Kadam</span>
+                <span className="text-xs text-white/60 font-mono mt-1">CSE — RIT College</span>
               </div>
             </div>
           </div>
@@ -41,11 +39,28 @@ const About = () => {
         <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
           
           <h2 className="text-4xl md:text-5xl font-black text-black mb-4">Hello!</h2>
-          <p className="text-lg font-bold mb-12 leading-relaxed max-w-3xl text-red-50">
-            Hi, my name is <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">Leeshark</span>, a passionate full-stack developer based in [Location], dedicated to crafting clean, functional, and highly scalable web applications.
-          </p>
+          <div className="text-base md:text-lg font-medium mb-8 leading-relaxed max-w-3xl text-red-50 flex flex-col gap-4">
+            <p>
+              Hi, my name is <span className="text-black font-black">Viraj Kadam</span>, a passionate Computer Science & Engineering student at <strong className="text-black">RIT College</strong>, Maharashtra, IN. I thrive at the intersection of creativity and logic.
+            </p>
+            <p>
+              From building full-stack web applications to solving competitive programming challenges, I love diving deep into technology. I believe great code is not just functional — it is elegant and built to solve real-world problems.
+            </p>
+          </div>
 
-          {/* Horizontal Skills Row (Transparent & Large) */}
+          {/* Tech stack inline */}
+          <div className="mb-8">
+            <p className="mb-3 font-mono text-xs text-black font-bold tracking-widest uppercase">Tech I Work With</p>
+            <div className="flex flex-wrap gap-2">
+              {['Python', 'JavaScript', 'C++', 'Java', 'React', 'Node.js', 'Express', 'MongoDB', 'MySQL', 'Git & GitHub', 'Linux', 'DSA', 'Machine Learning'].map((tech) => (
+                <span key={tech} className="px-3 py-1 rounded-full text-xs font-semibold bg-black/10 border border-white/20 text-white hover:bg-black/30 transition-colors duration-300">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Horizontal Skills Row (Transparent & Large Icons) */}
           <div className="flex items-center gap-10 mt-8">
             <img 
               data-aos="zoom-in" data-aos-delay="300"
