@@ -8,7 +8,7 @@ import heroVideo from '../assets/hero video/3e32c73d-4a68-4744-924c-504ebb16f2b8
 const Hero = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     AOS.init({
@@ -16,7 +16,15 @@ const Hero = () => {
       once: true,
       easing: 'ease-out'
     });
-    // Video does NOT autoplay anymore
+    
+    // Autoplay video on load
+    if (videoRef.current) {
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch((err) => {
+        console.log("Autoplay was prevented by browser policies:", err);
+      });
+    }
   }, []);
 
   const toggleVideo = (e) => {
@@ -32,14 +40,21 @@ const Hero = () => {
     }
   };
 
+  const handleVideoEnded = () => {
+    setIsPlaying(false);
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+    }
+  };
+
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden bg-black">
       {/* Background Video */}
       <video
         ref={videoRef}
-        loop
         muted={isMuted}
         playsInline
+        onEnded={handleVideoEnded}
         className="absolute top-0 left-0 w-full h-full object-cover z-0 scale-[1.25]"
       >
         <source src={heroVideo} type="video/mp4" />
