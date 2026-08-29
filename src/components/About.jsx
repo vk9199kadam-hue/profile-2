@@ -48,18 +48,18 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-black text-black mb-4">Hello!</h2>
           <div className="text-base md:text-lg font-medium mb-8 leading-relaxed max-w-3xl text-red-50 flex flex-col gap-4 text-center md:text-left">
             <p>
-              Hi, my name is <span className="text-black font-black">Viraj Kadam</span>, a passionate Computer Science & Engineering student at <strong className="text-black">RIT College</strong>, Maharashtra, IN. I thrive at the intersection of creativity and logic.
+              Hi, I’m <span className="text-black font-black">Viraj Sanjay Kadam</span>, a Computer Science & Engineering student at <strong className="text-black">RIT College</strong> (Expected Graduation 2026), building full-stack platforms, autonomous AI agents, and real-world hardware/print domain innovations.
             </p>
             <p>
-              From building full-stack web applications to solving competitive programming challenges, I love diving deep into technology. I believe great code is not just functional — it is elegant and built to solve real-world problems.
+              My work includes building the <strong className="text-black">RIT Library Print Management System</strong> (deployed live in production with a formal Letter of Appreciation), <strong className="text-black">PrintEase</strong>, data analytics models for <strong className="text-black">MedTourEasy</strong>, and autonomous AI travel agents built with <strong className="text-black">LangChain & LangGraph</strong>.
             </p>
           </div>
 
           {/* Tech stack inline */}
           <div className="mb-8 w-full flex flex-col items-center md:items-start">
-            <p className="mb-3 font-mono text-xs text-black font-bold tracking-widest uppercase">Tech I Work With</p>
+            <p className="mb-3 font-mono text-xs text-black font-bold tracking-widest uppercase">Tech Stack & Tools</p>
             <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-              {['Python', 'JavaScript', 'C++', 'Java', 'React', 'Node.js', 'Express', 'MongoDB', 'MySQL', 'Git & GitHub', 'Linux', 'DSA', 'Machine Learning'].map((tech) => (
+              {['React.js', 'Node.js', 'Express.js', 'JavaScript', 'Python', 'LangChain', 'LangGraph', 'LLMs', 'Pandas', 'Power BI', 'MongoDB', 'CockroachDB', 'USB Protocols', 'Vercel', 'Git & GitHub'].map((tech) => (
                 <span key={tech} className="px-3 py-1 rounded-full text-xs font-semibold bg-black/10 border border-white/20 text-white hover:bg-black/30 transition-colors duration-300">
                   {tech}
                 </span>

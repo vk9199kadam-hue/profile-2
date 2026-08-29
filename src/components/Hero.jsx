@@ -63,9 +63,9 @@ const Hero = () => {
           <p 
             data-aos="fade-up"
             data-aos-delay="200"
-            className="text-white/80 text-sm md:text-lg font-semibold mb-8 max-w-md drop-shadow-md mx-auto md:mx-0"
+            className="text-white/90 text-sm md:text-lg font-medium mb-8 max-w-md drop-shadow-md mx-auto md:mx-0 leading-relaxed"
           >
-            Passionate Computer Science student at RIT College, building elegant digital experiences. I love turning complex problems into clean, efficient code.
+            Full-Stack Developer & Print Domain Specialist — building real-world web systems, autonomous AI agents, and data analytics solutions.
           </p>
 
           {/* Buttons */}
@@ -75,13 +75,13 @@ const Hero = () => {
             className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-3 w-full"
           >
             {/* Primary Button */}
-            <a href="#projects" className="px-6 py-2.5 text-xs md:text-sm rounded-full bg-white text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-md">
+            <a href="#projects" className="px-6 py-2.5 text-xs md:text-sm rounded-full bg-[#ff2a2a] text-white font-bold hover:bg-red-600 transition-all duration-300 transform hover:scale-105 shadow-md">
               View My Work
             </a>
             
             {/* Secondary Button - Glassmorphism style */}
             <a href="#contact" className="px-6 py-2.5 text-xs md:text-sm rounded-full bg-black/40 border border-white/20 text-white font-bold hover:bg-black/60 transition-all duration-300 backdrop-blur-md">
-              Contact Me
+              Get In Touch
             </a>
           </div>
 
@@ -92,16 +92,16 @@ const Hero = () => {
             className="flex justify-center md:justify-start gap-8 mt-10 text-white/90 border-t border-white/10 pt-6 w-full max-w-md mx-auto md:mx-0"
           >
             <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">10+</span>
-              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">Projects Done</span>
+              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">4+</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">Systems Shipped</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">5+</span>
-              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">Technologies</span>
+              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">1 Live</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">RIT Library System</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">3★</span>
-              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">Coding Rating</span>
+              <span className="text-2xl md:text-3xl font-black text-[#ff2a2a]">10k+</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-white/50">Records Analyzed</span>
             </div>
           </div>
         </div>

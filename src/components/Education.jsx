@@ -51,11 +51,27 @@ const EducationItem = ({ year, degree, school, grade, icon, achievements, index 
 const Education = () => {
   const educationData = [
     {
-      year: "2022 — PRESENT",
+      year: "JUNE 2026 — INTERNSHIP",
+      degree: "Data Analytics Trainee",
+      school: "MedTourEasy Pvt. Ltd., Gurugram",
+      grade: "Project: Blood Donation Analytics",
+      icon: "📊",
+      achievements: [
+        "Analyzed 10,000 blood donor dataset (2005–2026) using Python & statistical methods.",
+        "Quantified a 64.16% donor eligibility rate and identified AB- as rarest group (~1%).",
+        "Built interactive Power BI dashboard & analytical report with retention recommendations."
+      ]
+    },
+    {
+      year: "2022 — EXPECTED 2026",
       degree: "B.E. in Computer Science & Engineering",
-      school: "RIT College, Maharashtra",
-      grade: "Current CGPA: 8.2 / 10",
-      icon: "🎓"
+      school: "Rajarambapu Institute of Technology (RIT), Rajaramnagar",
+      grade: "CGPA: 8.0 / 10",
+      icon: "🎓",
+      achievements: [
+        "Formally awarded Letter of Appreciation (Ref: RIT/LIB/483/29-07-2026) by Dr. Vishwas Hase, Librarian RIT Central Library, for developing the Reprographic Management System.",
+        "Coursework: DSA, Discrete Math, Probability & Statistics, Database Systems, Computer Networks, Software Engineering."
+      ]
     },
     {
       year: "2020 — 2022",
@@ -72,14 +88,14 @@ const Education = () => {
       icon: "📗"
     },
     {
-      year: "ACHIEVEMENTS",
-      degree: "Certifications & Competitions",
-      school: "Extracurricular Achievements",
+      year: "RECOGNITION & CERTIFICATIONS",
+      degree: "Honors & Achievements",
+      school: "Professional Certifications",
       icon: "🏆",
       achievements: [
-        "Participated in multiple college-level hackathons.",
-        "Completed NPTEL Python programming certification.",
-        "Solved 100+ algorithmic problems on LeetCode."
+        "Letter of Appreciation — RIT Central Library (Reprographic System)",
+        "Certificate of Traineeship Completion — MedTourEasy Pvt. Ltd.",
+        "freeCodeCamp — Responsive Web Design & JavaScript Data Structures"
       ]
     }
   ];

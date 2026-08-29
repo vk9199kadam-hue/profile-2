@@ -1,15 +1,22 @@
 import React from 'react';
 
-const ProjectCard = ({ emoji, title, desc, tags, gitLink, liveLink, index }) => {
+const ProjectCard = ({ emoji, title, desc, tags, gitLink, liveLink, badge, index }) => {
   return (
     <div 
       data-aos="fade-up"
       data-aos-delay={index * 100}
-      className="group bg-white border border-neutral-100 rounded-3xl overflow-hidden hover:border-orange-500/20 transition-all duration-500 flex flex-col justify-between hover:-translate-y-2 shadow-[0_15px_40px_rgba(249,115,22,0.06)] relative max-w-md w-full"
+      className="group bg-white border border-neutral-200 rounded-3xl overflow-hidden hover:border-orange-500/50 transition-all duration-500 flex flex-col justify-between hover:-translate-y-2 shadow-[0_15px_40px_rgba(249,115,22,0.06)] relative max-w-md w-full"
     >
       {/* Thumbnail Area */}
-      <div className="h-44 bg-gradient-to-br from-orange-50 to-orange-100/50 flex items-center justify-center text-6xl relative select-none border-b border-neutral-100">
+      <div className="h-48 bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100/60 flex items-center justify-center text-6xl relative select-none border-b border-neutral-100">
         <span className="group-hover:scale-110 transition-transform duration-500">{emoji}</span>
+        
+        {badge && (
+          <span className="absolute top-4 right-4 bg-[#ff2a2a] text-white text-[10px] font-mono font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+            {badge}
+          </span>
+        )}
+
         {/* Glow effect */}
         <div className="absolute inset-0 bg-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </div>
@@ -39,22 +46,24 @@ const ProjectCard = ({ emoji, title, desc, tags, gitLink, liveLink, index }) => 
 
         {/* Links */}
         <div className="flex gap-4 border-t border-neutral-100 pt-4 mt-auto">
-          <a 
-            href={gitLink || "#"} 
-            className="text-xs font-mono font-bold text-neutral-700 hover:text-neutral-950 flex items-center gap-1 transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub ↗
-          </a>
-          {liveLink && (
+          {gitLink && (
             <a 
-              href={liveLink} 
-              className="text-xs font-mono font-bold text-orange-500 hover:underline flex items-center gap-1 transition-colors"
+              href={gitLink} 
+              className="text-xs font-mono font-bold text-neutral-700 hover:text-neutral-950 flex items-center gap-1 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Live Demo ↗
+              GitHub ↗
+            </a>
+          )}
+          {liveLink && (
+            <a 
+              href={liveLink} 
+              className="text-xs font-mono font-bold text-[#ff2a2a] hover:underline flex items-center gap-1 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live Demo / Post ↗
             </a>
           )}
         </div>
@@ -66,50 +75,49 @@ const ProjectCard = ({ emoji, title, desc, tags, gitLink, liveLink, index }) => 
 const Projects = () => {
   const projectsData = [
     {
-      emoji: "🛒",
-      title: "ShopEase — E-Commerce App",
-      desc: "A full-stack e-commerce platform with product listings, cart management, secure checkout, and an admin dashboard for managing orders.",
-      tags: ["React", "Node.js", "MongoDB"],
-      gitLink: "https://github.com",
-      liveLink: "https://google.com"
+      emoji: "🖨️",
+      title: "RIT Library Print Management System",
+      desc: "Deployed live at RIT Central Library (Letter of Appreciation from Dr. Vishwas Hase). Replaced manual WhatsApp file downloads with secure remote PDF uploads, automated librarian queue, and monthly Excel reporting.",
+      tags: ["React.js", "Node.js", "Express.js", "Vercel"],
+      badge: "In Production",
+      gitLink: "https://github.com/vk9199kadam-hue",
+      liveLink: "https://print-lib.vercel.app/"
+    },
+    {
+      emoji: "⚡",
+      title: "PrintEase — Campus Print Platform",
+      desc: "Online print management application for students and local print shop owners. Supports remote document upload, single/double sided & color configuration, Razorpay online payments, and live queue status tracking.",
+      tags: ["React", "Node.js", "MongoDB", "Razorpay"],
+      badge: "Featured Demo",
+      gitLink: "https://github.com/vk9199kadam-hue",
+      liveLink: "https://printease-queue.vercel.app/"
+    },
+    {
+      emoji: "🩸",
+      title: "Blood Donation Analytics (MedTourEasy)",
+      desc: "Data Analytics traineeship analyzing 10,000 blood donor records (2005–2026). Performed EDA, donor eligibility trend evaluation (64.16% eligibility rate, AB- rarest ~1%), and interactive Power BI dashboard.",
+      tags: ["Python", "Pandas", "Matplotlib", "Power BI"],
+      badge: "Data Science",
+      gitLink: "https://lnkd.in/g2B8-r6k",
+      liveLink: "https://lnkd.in/guTp8iMA"
     },
     {
       emoji: "🤖",
-      title: "Spam Detector — ML Model",
-      desc: "A machine learning model using NLP techniques to classify email as spam or not-spam with over 95% accuracy using Naive Bayes.",
-      tags: ["Python", "ML", "Scikit-learn"],
-      gitLink: "https://github.com"
+      title: "Autonomous Trip Planner (AI Agent)",
+      desc: "Autonomous travel planning system leveraging the ReAct pattern with LangChain and LangGraph to reason, plan, and execute multi-step travel itineraries using live search and data sources.",
+      tags: ["Python", "LangChain", "LangGraph", "LLM", "ReAct"],
+      badge: "AI / ML",
+      gitLink: "https://lnkd.in/dxSaeMtf",
+      liveLink: "https://lnkd.in/p/dS4riabV"
     },
     {
-      emoji: "📋",
-      title: "TaskMaster — Todo App",
-      desc: "A real-time task management app with drag-and-drop boards, priority labels, deadline tracking, and Firebase authentication.",
-      tags: ["React", "Firebase", "CSS"],
-      gitLink: "https://github.com",
-      liveLink: "https://google.com"
-    },
-    {
-      emoji: "💬",
-      title: "ChatBox — Real-time Chat",
-      desc: "A real-time chat application supporting multiple rooms, private messaging, emoji reactions, and online status indicators using WebSockets.",
-      tags: ["Node.js", "Socket.io", "Express"],
-      gitLink: "https://github.com",
-      liveLink: "https://google.com"
-    },
-    {
-      emoji: "📊",
-      title: "DataViz — Student Analytics",
-      desc: "A data analysis dashboard that visualizes student performance trends, attendance patterns, and grade distribution with interactive charts.",
-      tags: ["Python", "Pandas", "Matplotlib"],
-      gitLink: "https://github.com"
-    },
-    {
-      emoji: "🌐",
-      title: "Portfolio v1 — Personal Site",
-      desc: "My first personal portfolio website with smooth animations, dark theme, responsive design, and sections for skills and contact.",
-      tags: ["HTML", "CSS", "JavaScript"],
-      gitLink: "https://github.com",
-      liveLink: "https://google.com"
+      emoji: "🚀",
+      title: "More Repositories & Research",
+      desc: "Explore more full-stack web applications, machine learning experiments, and hardware integration projects on my GitHub and LinkedIn profiles.",
+      tags: ["GitHub", "LinkedIn", "Open Source"],
+      badge: "Connect",
+      gitLink: "https://github.com/vk9199kadam-hue",
+      liveLink: "https://www.linkedin.com/in/kadam-viraj-sanjay-6968a1352?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     }
   ];
 
@@ -119,11 +127,14 @@ const Projects = () => {
         {/* Header */}
         <div className="mb-16 text-center md:text-left" data-aos="fade-up">
           <span className="text-xs font-mono tracking-[0.2em] text-orange-500 uppercase font-black block">
-            What I've Built
+            What I've Built & Shipped
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-neutral-900 mt-3 tracking-tighter leading-none">
-            My Projects
+            Featured Projects
           </h2>
+          <p className="text-neutral-600 text-sm md:text-base mt-4 max-w-2xl font-medium">
+            Real-world software systems in full-stack web development, data analytics, print domain innovation, and autonomous LLM agents.
+          </p>
         </div>
 
         {/* Cards Grid */}
@@ -138,3 +149,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
